@@ -1,0 +1,8 @@
+.container{
+    display:flex;
+}
+
+.row-header{
+    display:flex;
+    justify-content: space-between;
+}
