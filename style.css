@@ -3,10 +3,60 @@
     src: url(assets/fonts/static/Inter-Regular.ttf);
   }
 
-/*variables theme 1*/
+
 :root {
+    /*variables theme 1*/
+    --backgroundColorT1:hsl(222, 26%, 31%);
     --buttonsT1:hsl(32, 26%, 89%);
+    --buttons-hover1:white;
+    --text-buttons1:hsl(221, 14%, 31%);
     --pressDelT1:hsl(223, 52%, 76%);
+    --topNumbers1:white;
+    --selectorBar-background1:hsl(227, 31%, 21%);
+    --selectorCircle1:hsl(7, 99%, 67%);
+    --shadowButton1:hsl(26, 14%, 65%);
+    --displayCalc-background1:hsl(224, 36%, 15%);
+    --button-background1:hsl(224,36%,15%);
+    --button-DR-background-hover1:hsl(226, 30%, 36%);
+    --button-equal-shadow-background-hover1:hsl(6, 72%, 32%);
+    --button-equal-background-hover1:hsl(6, 93%, 67%);
+    --text-hover1:white;
+
+    /*variables theme 2*/
+    --backgroundColorT2:hsl(0, 0%, 90%);
+    --buttonsT2:hsl(48, 9%, 89%);
+    --buttons-hover2:white;
+    --text-buttons2:hsl(51, 7%, 21%);
+    --pressDelT2:hsl(185, 41%, 56%);
+    --topNumbers2:hsl(60, 9%, 17%);
+    --selectorBar-background2:hsl(0, 8%, 82%);
+    --selectorCircle2:hsl(25, 100%, 61%);
+    --shadowButton2:hsl(30, 10%, 61%);
+    --displayCalc-background2:hsl(0, 0%, 93%);
+    --button-background2:hsl(0, 6%, 82%);
+    --button-DR-background-hover2:hsl(185, 41%, 56%);
+    --button-equal-shadow-background-hover2:hsl(25, 77%, 27%);
+    --button-equal-background-hover2:hsl(25, 100%, 61%);
+    --text-hover2:white;
+    
+    /*Variable used to change theme*/
+    --buttons:var(--buttonsT1);
+    --text-buttons:var(--text-buttons1);
+    --buttons-hover:var(--buttons-hover1);
+    --buttonDel:var(--pressDelT1);
+    --backgroundColor:var(--backgroundColorT1);
+    --topNumbers:var(--topNumbers1);
+    --selectorBar-background:var(--selectorBar-background1);
+    --selectorCircle:var(--selectorCircle1);
+    --shadowButton:var(--shadowButton1);
+    --displayCalc-background:var(--displayCalc-background1);
+    --button-background:var(--button-background1);
+    --button-DR-background-hover:var(--button-DR-background-hover1);
+    --button-equal-shadow-background-hover:var(--button-equal-shadow-background-hover1);
+    --button-equal-background-hover:var(--button-equal-background-hover1);
+    --text-hover:var(--text-hover1);
+
+
 }
 
 
@@ -19,7 +69,7 @@
 body{
     width:100%;
     max-width:1440px;
-    background-color: hsl(222, 26%, 31%);
+    background-color: var(--backgroundColor);
     height: 100vh;
     display:flex;
     justify-content: center;
@@ -30,7 +80,7 @@ body{
     display:flex;
     justify-content:flex-end;
     font-family: interRegular;
-    color:white;
+    color:var(--topNumbers);
 
 }
 .selector-number{
@@ -45,7 +95,7 @@ body{
     justify-content: space-between;
     align-items: center;
     font-family: interRegular;
-    color:white
+    color:var(--topNumbers)
 }
 
 .control{
@@ -62,13 +112,13 @@ body{
 #displayCalc{
     width:450px;
     height:100px;
-    background-color:hsl(224, 36%, 15%) ;
+    background-color:var(--displayCalc-background) ;
     border:0;
     border-radius: 10px;
     display:flex;
     align-items: center;
     justify-content: flex-end;
-    color:white;
+    color:var(--topNumbers);
     font-size:32px;
     font-weight: 700;
 }
@@ -79,7 +129,7 @@ button{
     cursor:pointer;
     border:0;
     border-radius: 5px;
-    box-shadow:0px 3px 0px 0px hsl(26, 14%, 65%);
+    box-shadow:0px 3px 0px 0px var(--shadowButton);
     margin:10px 10px;
     height: 50px;
     display: flex;
@@ -87,40 +137,40 @@ button{
     justify-content: center;
 }
 .num:hover{
-    background-color: white;
+    background-color: var(--buttons-hover);
 }
 .btn{
     display:flex;
     width:450px;
     flex-flow:wrap;
-    background-color:hsl(224,36%,15%);
+    background-color:var(--button-background);
     padding: 10px 5px;
     margin:15px 0;
     border-radius:10px
 }
 .del:hover{
     background-color: var(--pressDelT1);
-    color:white;
-    box-shadow:0px 3px 0px 0px hsl(226, 30%, 36%);
+    color:var(--text-hover);
+    box-shadow:0px 3px 0px 0px var(--button-DR-background-hover);
 }
 .reset:hover{
     background-color: var(--pressDelT1);
-    color:white;
-    box-shadow:0px 3px 0px 0px hsl(226, 30%, 36%);
+    color:var(--text-hover);
+    box-shadow:0px 3px 0px 0px var(--button-DR-background-hover);
 }
 .equal:hover{
-    background-color: hsl(6, 93%, 67%);
-    color:white;
-    box-shadow:0px 3px 0px 0px hsl(6, 72%, 32%);
+    background-color: var(--button-equal-background-hover);
+    color:var(--text-hover);
+    box-shadow:0px 3px 0px 0px var(--button-equal-shadow-background-hover);
 }
 .reset,.equal{
     width:200px;
 }
 
 .btn button{
-    background-color: var(--buttonsT1);
+    background-color: var(--buttons);
     font-family: interRegular;
-    color:hsl(221, 14%, 31%);
+    color:var(--text-buttons);
     font-size:32px;
     font-weight: 700;
 
@@ -133,7 +183,7 @@ button{
     justify-content: space-between;
     width: 70px;
     height: 20px;
-    background-color: hsl(227, 31%, 21%);
+    background-color:var(--selectorBar-background);
     border-radius: 25px;
     padding: 5px;
   }
@@ -141,7 +191,7 @@ button{
   .selector-circle {
     width: 15px;
     height: 15px;
-    background-color: red;
+    background-color: var(--selectorCircle);
     border-radius: 50%;
     position:relative;
     left:0;
