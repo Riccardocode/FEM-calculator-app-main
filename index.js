@@ -1,4 +1,13 @@
 const displayCalc = document.getElementById("displayCalc");
+const selectedTheme = document.getElementById("selection");
+const choise1 = document.getElementById("choise1");
+const choise2 = document.getElementById("choise2");
+const choise3 = document.getElementById("choise3");
+
+choise1.addEventListener("click", changeTheme1);
+choise2.addEventListener("click", changeTheme2);
+choise3.addEventListener("click", changeTheme3);
+
 
 let accumulator=0;
 let currentValue = 0;
@@ -63,7 +72,20 @@ function equal(){
         displayCalc.value= accumulator.toLocaleString('en-US');
         console.log(accumulator);
     }
-    count +=1;
-    
-    
+    count +=1;    
+}
+
+function changeTheme1(){
+    selectedTheme.style.left="0px";
+    console.log("changed to 1");
+}
+
+function changeTheme2(){
+    selectedTheme.style.left="22px";
+    console.log("changed to 2");
+}
+
+function changeTheme3(){
+    selectedTheme.style.left="46px";
+    console.log("changed to 3");
 }
