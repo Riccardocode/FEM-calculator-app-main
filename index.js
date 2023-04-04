@@ -142,6 +142,7 @@ function changeTheme2(){
 
 function changeTheme3(){
     selectedTheme.style.left="46px";
+    changeColors(3); 
     console.log("changed to 3");
 }
 
