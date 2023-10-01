@@ -52,22 +52,22 @@
       </form>
       <div class="cal-body">
         <div class="btn">
-          <button class="num" onclick=updateDisplay(7)>7</button>
-          <button class="num" onclick=updateDisplay(8)>8</button>
-          <button class="num" onclick=updateDisplay(9)>9</button>
-          <button class="del" onClick="clearDisplay()">DEL</button>
-          <button class="num" onclick=updateDisplay(4)>4</button>
-          <button class="num" onclick=updateDisplay(5)>5</button>
-          <button class="num" onclick=updateDisplay(6)>6</button>
-          <button class="num" onClick="operation('+')">+</button>
-          <button class="num" onclick=updateDisplay(1)>1</button>
-          <button class="num" onclick=updateDisplay(2)>2</button>
-          <button class="num" onclick=updateDisplay(3)>3</button>
-          <button class="num" onClick="operation('-')">-</button>
-          <button class="num" onclick=addDot()>.</button>
-          <button class="num" onclick=updateDisplay(0)>0</button>
-          <button class="num" onClick=`${operation('/')}`>/</button>
-          <button class="num" onClick=`${operation('*')}`>x</button>
+          <button id="btn7" class="num" onclick=updateDisplay(7)>7</button>
+          <button id="btn8" class="num" onclick=updateDisplay(8)>8</button>
+          <button id="btn9" class="num" onclick=updateDisplay(9)>9</button>
+          <button id="btnDel" class="del" onClick="updateDisplay('del')">DEL</button>
+          <button id="btn4" class="num" onclick=updateDisplay(4)>4</button>
+          <button id="btn5" class="num" onclick=updateDisplay(5)>5</button>
+          <button id="btn6" class="num" onclick=updateDisplay(6)>6</button>
+          <button id="btnPlus" class="num" onClick="operation('+')">+</button>
+          <button id="btn1" class="num" onclick=updateDisplay(1)>1</button>
+          <button id="btn2" class="num" onclick=updateDisplay(2)>2</button>
+          <button id="btn3" class="num" onclick=updateDisplay(3)>3</button>
+          <button id="btnMines" class="num" onClick="operation('-')">-</button>
+          <button id="btnDot" class="num" onclick=addDot()>.</button>
+          <button id="btn0" class="num" onclick=updateDisplay(0)>0</button>
+          <button id="btnDiv" class="num" onClick=`${operation('/')}`>/</button>
+          <button id="btnTimes" class="num" onClick=`${operation('*')}`>x</button>
           
           <button class="reset" onclick=resetDisplay()>RESET</button>
           <button class="equal" onClick=equal()>=</button>

@@ -100,7 +100,9 @@ body{
     justify-content:flex-end;
     font-family: interRegular;
     color:var(--topNumbers);
-
+}
+.topNum > p:hover{
+    cursor: pointer;
 }
 .selector-number{
     margin-right:5px;

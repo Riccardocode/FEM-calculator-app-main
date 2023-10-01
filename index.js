@@ -9,21 +9,34 @@ choise1.addEventListener("click", changeTheme1);
 choise2.addEventListener("click", changeTheme2);
 choise3.addEventListener("click", changeTheme3);
 
+// I want to track if a dot has already been usedDot. 
+// if so, the user can't use it again.
+let usedDot = false;
 
 let accumulator=0;
 let currentValue = 0;
 let operand = '';
 let convertedNumber=0;
 let count =0;
-function updateDisplay(number){
-    
-    displayCalc.value+=number;
+function updateDisplay(digit){
+    if(digit === 'del'){
+        displayCalc.value = displayCalc.value.slice(0, -1);
+    }else {
+        displayCalc.value+=digit;
+    }
 }
 function addDot(){
-    displayCalc.value+='.';
+    if(usedDot){
+        return;
+    }else{
+        displayCalc.value+='.';
+        usedDot = true;
+    }
 }
+
 function resetDisplay(){
     displayCalc.value='';
+    usedDot = false;
     accumulator = 0;
     count =0;
 }
@@ -41,16 +54,16 @@ function operation(symbol){
     else{
         switch(symbol){
             case "+":
-            accumulator += parseFloat(displayCalc.value);
+            accumulator = parseFloat(accumulator) +parseFloat(displayCalc.value);
                 break;
             case "-":
-                accumulator = accumulator - parseFloat(displayCalc.value);
+                accumulator = parseFloat(accumulator) - parseFloat(displayCalc.value);
                 break;
             case "*":
-                accumulator = accumulator * parseFloat(displayCalc.value);
+                accumulator = parseFloat(accumulator) * parseFloat(displayCalc.value);
                 break;
             case "/":
-                accumulator = accumulator / parseFloat(displayCalc.value);
+                accumulator = parseFloat(accumulator) / parseFloat(displayCalc.value);
                 break;
             default:
                 console.log("nessuna operazione");
@@ -64,12 +77,16 @@ function operation(symbol){
 
 function equal(){
     if(displayCalc.value ==''){
-        displayCalc.value = accumulator.toLocaleString('en-US');
+        // displayCalc.value = accumulator.toLocaleString('en-US');
+        displayCalc.value = parseFloat(accumulator);
+        accumulator=0;
+        count =0;
+
     }
     else{
        
         operation(operand);
-        displayCalc.value= accumulator.toLocaleString('en-US');
+        displayCalc.value= parseFloat(accumulator);
         console.log(accumulator);
     }
     count +=1;    
