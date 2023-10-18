@@ -132,10 +132,12 @@ body{
 }
 #displayCalc{
     width:450px;
-    height:100px;
+    height:70px;
     background-color:var(--displayCalc-background) ;
     border:0;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
     display:flex;
     align-items: center;
     justify-content: flex-end;
@@ -143,6 +145,19 @@ body{
     font-size:32px;
     font-weight: 700;
     padding-right: 20px;
+    
+}
+#upperDisplay{
+    width: 450px;
+    height: 30px;
+    background-color:var(--displayCalc-background) ;
+    color:var(--topNumbers);
+    font-size:20px;
+    font-weight: 500;
+    padding-right: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: end;
     
 }
 button{

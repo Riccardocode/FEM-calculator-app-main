@@ -5,6 +5,9 @@ const choise1 = document.getElementById("choise1");
 const choise2 = document.getElementById("choise2");
 const choise3 = document.getElementById("choise3");
 
+const upperDisplay = document.getElementById("upperDisplay");
+
+
 choise1.addEventListener("click", changeTheme1);
 choise2.addEventListener("click", changeTheme2);
 choise3.addEventListener("click", changeTheme3);
@@ -38,6 +41,7 @@ function resetDisplay(){
     displayCalc.value='';
     usedDot = false;
     accumulator = 0;
+    upperDisplay.innerHTML = '';
     count =0;
 }
 
@@ -54,7 +58,7 @@ function operation(symbol){
     else{
         switch(symbol){
             case "+":
-            accumulator = parseFloat(accumulator) +parseFloat(displayCalc.value);
+            accumulator = parseFloat(accumulator) + parseFloat(displayCalc.value);
                 break;
             case "-":
                 accumulator = parseFloat(accumulator) - parseFloat(displayCalc.value);
@@ -69,7 +73,9 @@ function operation(symbol){
                 console.log("nessuna operazione");
         }
     }    
-    console.log(accumulator)
+    console.log(accumulator);
+
+    upperDisplay.innerHTML = accumulator + " " + symbol;
     displayCalc.value='';
     count +=1;
 }
@@ -87,7 +93,9 @@ function equal(){
        
         operation(operand);
         displayCalc.value= parseFloat(accumulator);
+        accumulator=0;
         console.log(accumulator);
+        upperDisplay.innerHTML = '';
     }
     count +=1;    
 }
